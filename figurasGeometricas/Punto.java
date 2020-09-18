@@ -1,6 +1,6 @@
 package figurasGeometricas;
 
-public class Punto {
+public class Punto implements Movible{
 	private double x;
 	private double y;
 	
@@ -53,6 +53,11 @@ public class Punto {
 		if (Double.doubleToLongBits(y) != Double.doubleToLongBits(other.y))
 			return false;
 		return true;
+	}
+	@Override
+	public void mover(double deltaX, double deltaY) {
+		this.setX(this.getX()+deltaX);
+		this.setY(this.getY()+deltaY);		
 	}
 	
 	

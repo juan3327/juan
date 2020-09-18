@@ -34,5 +34,14 @@ public class Triangulo extends Figura {
 				- (super.getP1().getX() * p3.getY() + p3.getX() * p2.getY() + p2.getX() * super.getP1().getY())) / 2;
 
 	}
+	
+	
+
+	@Override
+	public void mover(double deltaX, double deltaY) {
+		super.getP1().mover(deltaX, deltaY);
+		this.getP2().mover(deltaX, deltaY);
+		this.getP3().mover(deltaX, deltaY);
+	}
 		
 }

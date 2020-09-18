@@ -2,25 +2,32 @@ package figurasGeometricas;
 
 public class Rectangulo extends Figura {
 	
-	private Punto supDer;
+	private Punto p2;
 
 	public Rectangulo(Punto a, Punto b) {
 		super(a);
-		this.setSupDer(b);
+		this.setP2(b);
 		
 	}
 
 	@Override
 	public Double calcularArea() {
-		return Math.abs((super.getP1().getX()-this.supDer.getX()) * (super.getP1().getY()-this.supDer.getY()));
+		return Math.abs((super.getP1().getX()-this.getP2().getX()) * (super.getP1().getY()-this.getP2().getY()));
 	}
 	
-	private Punto getSupDer() {
-		return supDer;
+	protected Punto getP2() {
+		return p2;
 	}
 
-	private void setSupDer(Punto supDer) {
-		this.supDer = supDer;
+	protected void setP2(Punto supDer) {
+		this.p2 = supDer;
+	}
+
+	@Override
+	public void mover(double deltaX, double deltaY) {
+		super.getP1().mover(deltaX, deltaY);
+		this.getP2().mover(deltaX, deltaY);
+		
 	}
 
 }

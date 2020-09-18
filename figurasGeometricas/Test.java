@@ -9,7 +9,11 @@ public class Test {
 		Figura triangulito = new Triangulo(new Punto(0,0), new Punto(4,0), new Punto(0,4));
 		Figura eli = new Elipse(new Punto(-10,-10),4,2);
 		Figura circulito = new Circulo(new Punto(1,1),3); 
-				
+		
+		circulito.mover(3, 8);
+		cuadri.mover(-4,-8);
+		
+		
 		Figura figuras[] = new Figura[4];
 		
 		figuras[0]=cuadri;
@@ -18,7 +22,7 @@ public class Test {
 		figuras[3]=circulito;
 		
 		for(Figura f : figuras)
-			System.out.println(f.calcularArea());
+			System.out.println(f.toString()+ " " + f.calcularArea());
 		
 		//ordenamos el arreglo de menor a mayor area
 		Arrays.sort(figuras);

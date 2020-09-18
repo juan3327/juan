@@ -1,6 +1,6 @@
 package figurasGeometricas;
 
-public abstract class Figura implements Comparable<Figura> {
+public abstract class Figura implements Comparable<Figura>, Movible {
 	
 	private Punto p1;
 	
@@ -13,15 +13,19 @@ public abstract class Figura implements Comparable<Figura> {
 		return p1;
 	}
 
-	private void setP1(Punto p1) {
+	protected void setP1(Punto p1) {
 		this.p1 = p1;
 	}
 	
 	public abstract Double calcularArea();
 	
 	public int compareTo(Figura otraFigura) {
-		return this.calcularArea().compareTo(otraFigura.calcularArea());		
-		
+		return this.calcularArea().compareTo(otraFigura.calcularArea());	
+			
+	}
+    
+	public String toString() {
+		return "Soy una figura con punto " + this.getP1().toString();
 	}
 
 }

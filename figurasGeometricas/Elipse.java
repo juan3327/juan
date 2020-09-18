@@ -39,6 +39,12 @@ public class Elipse extends Figura {
 		return "Soy una Elipse de centro " + super.getP1() + 
 				" y radios " + this.getRadioMenor() + " " +this.getRadioMayor();
 	}
+
+	@Override
+	public void mover(double deltaX, double deltaY) {
+		super.getP1().mover(deltaX, deltaY);
+		
+	}
 	
 	
 
